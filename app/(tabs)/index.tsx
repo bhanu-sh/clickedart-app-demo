@@ -1,4 +1,4 @@
-import { StyleSheet, View, Platform } from "react-native";
+import { StyleSheet, View, Platform, Text } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import { type ImageSource } from "expo-image";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -98,7 +98,8 @@ export default function Index() {
 
   return (
     <GestureHandlerRootView style={styles.container}>
-      <View style={styles.container}>
+      <Text className="text-4xl text-white font-semibold">ClickedArt</Text>
+      {/* <View style={styles.container}>
         <View style={styles.imageContainer}>
           <View ref={imageRef} collapsable={false}>
             <ImageViewer
@@ -138,7 +139,7 @@ export default function Index() {
         <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
           <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose} />
         </EmojiPicker>
-      </View>
+      </View> */}
     </GestureHandlerRootView>
   );
 }
@@ -159,6 +160,9 @@ const styles = StyleSheet.create({
   optionsContainer: {
     position: "absolute",
     bottom: 80,
+  },
+  text: {
+    color: "#fff",
   },
   optionsRow: {
     alignItems: "center",

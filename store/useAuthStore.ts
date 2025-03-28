@@ -2,11 +2,18 @@ import { create } from "zustand";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 interface User {
+  _id: string;
   firstName: string;
   lastName: string;
   email: string;
   type: string;
   profileImage?: string;
+  coverImage?: string;
+  shippingAddress?: {
+    city: string;
+    state: string;
+    country: string;
+  };
 }
 
 interface AuthState {
@@ -44,7 +51,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 
     try {
       const res = await fetch(
-        `http://192.168.29.92:5000/api/user/get-user-profile-by-token`,
+        `${process.env.EXPO_PUBLIC_API_URL}/api/user/get-user-profile-by-token`,
         {
           headers: { "x-auth-token": token },
         }

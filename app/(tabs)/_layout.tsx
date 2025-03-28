@@ -3,7 +3,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { useAuthStore } from "@/store/useAuthStore";
 
 export default function TabLayout() {
-  const { isHydrated, photographer } = useAuthStore();
+  const { photographer } = useAuthStore();
   return (
     <Tabs
       screenOptions={{
