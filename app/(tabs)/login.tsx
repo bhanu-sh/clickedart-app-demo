@@ -18,7 +18,7 @@ export default function SignInScreen() {
 
   const onSubmit = async (data: SignInFormData) => {
     try {
-      const response = await axios.post("http://192.168.29.92:5000/api/photographer/login", data);
+      const response = await axios.post(`${process.env.EXPO_PUBLIC_API_URL}/api/photographer/login`, data);
       const token = response.data.token;
       const photographer = response.data.photographer;
       
